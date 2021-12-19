@@ -1,0 +1,470 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="CreateReceipt">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AgencyId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="SystemType" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="DocketId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="TravellerId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="TotalAmount" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="CurrencyId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="CreditCardNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ExpDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CVV" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="CreditCardType" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="CreditMethod" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="CreditTypeId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="CustomerName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="PaymentsNumber" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="PassportNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReferenceNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="VoucherNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateReceiptResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateReceiptResult" type="tns:CreateReceiptResponce" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CreateReceiptResponce">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ReceiptId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetTipulimPriceForSupplier">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AgencyId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="SystemType" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="supplierId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="addId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="fromDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="toDate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTipulimPriceForSupplierResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTipulimPriceForSupplierResult" type="tns:TipulimPriceResponce" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="TipulimPriceResponce">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Success" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="PriceNetto" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="PriceBrutto" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CheckSecurity">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AgencyId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="SystemType" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ResourceID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckSecurityResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CheckSecurityResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PNRToDocket">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AgencyId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="SystemType" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="BundleId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PNRToDocketResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PNRToDocketResult" type="tns:PNR2DocketResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="PNR2DocketResponse">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Success" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CreateReceiptResponce" nillable="true" type="tns:CreateReceiptResponce" />
+      <s:element name="TipulimPriceResponce" nillable="true" type="tns:TipulimPriceResponce" />
+      <s:element name="boolean" type="s:boolean" />
+      <s:element name="PNR2DocketResponse" nillable="true" type="tns:PNR2DocketResponse" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="CreateReceiptSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateReceipt" />
+  </wsdl:message>
+  <wsdl:message name="CreateReceiptSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateReceiptResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTipulimPriceForSupplierSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTipulimPriceForSupplier" />
+  </wsdl:message>
+  <wsdl:message name="GetTipulimPriceForSupplierSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTipulimPriceForSupplierResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckSecuritySoapIn">
+    <wsdl:part name="parameters" element="tns:CheckSecurity" />
+  </wsdl:message>
+  <wsdl:message name="CheckSecuritySoapOut">
+    <wsdl:part name="parameters" element="tns:CheckSecurityResponse" />
+  </wsdl:message>
+  <wsdl:message name="PNRToDocketSoapIn">
+    <wsdl:part name="parameters" element="tns:PNRToDocket" />
+  </wsdl:message>
+  <wsdl:message name="PNRToDocketSoapOut">
+    <wsdl:part name="parameters" element="tns:PNRToDocketResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateReceiptHttpGetIn">
+    <wsdl:part name="AgencyId" type="s:string" />
+    <wsdl:part name="SystemType" type="s:string" />
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="DocketId" type="s:string" />
+    <wsdl:part name="TravellerId" type="s:string" />
+    <wsdl:part name="TotalAmount" type="s:string" />
+    <wsdl:part name="CurrencyId" type="s:string" />
+    <wsdl:part name="CreditCardNumber" type="s:string" />
+    <wsdl:part name="ExpDate" type="s:string" />
+    <wsdl:part name="CVV" type="s:string" />
+    <wsdl:part name="CreditCardType" type="s:string" />
+    <wsdl:part name="CreditMethod" type="s:string" />
+    <wsdl:part name="CreditTypeId" type="s:string" />
+    <wsdl:part name="CustomerName" type="s:string" />
+    <wsdl:part name="PaymentsNumber" type="s:string" />
+    <wsdl:part name="PassportNumber" type="s:string" />
+    <wsdl:part name="ReferenceNumber" type="s:string" />
+    <wsdl:part name="VoucherNumber" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CreateReceiptHttpGetOut">
+    <wsdl:part name="Body" element="tns:CreateReceiptResponce" />
+  </wsdl:message>
+  <wsdl:message name="GetTipulimPriceForSupplierHttpGetIn">
+    <wsdl:part name="AgencyId" type="s:string" />
+    <wsdl:part name="SystemType" type="s:string" />
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="supplierId" type="s:string" />
+    <wsdl:part name="addId" type="s:string" />
+    <wsdl:part name="fromDate" type="s:string" />
+    <wsdl:part name="toDate" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTipulimPriceForSupplierHttpGetOut">
+    <wsdl:part name="Body" element="tns:TipulimPriceResponce" />
+  </wsdl:message>
+  <wsdl:message name="CheckSecurityHttpGetIn">
+    <wsdl:part name="AgencyId" type="s:string" />
+    <wsdl:part name="SystemType" type="s:string" />
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+    <wsdl:part name="ResourceID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckSecurityHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="PNRToDocketHttpGetIn">
+    <wsdl:part name="AgencyId" type="s:string" />
+    <wsdl:part name="SystemType" type="s:string" />
+    <wsdl:part name="BundleId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="PNRToDocketHttpGetOut">
+    <wsdl:part name="Body" element="tns:PNR2DocketResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateReceiptHttpPostIn">
+    <wsdl:part name="AgencyId" type="s:string" />
+    <wsdl:part name="SystemType" type="s:string" />
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="DocketId" type="s:string" />
+    <wsdl:part name="TravellerId" type="s:string" />
+    <wsdl:part name="TotalAmount" type="s:string" />
+    <wsdl:part name="CurrencyId" type="s:string" />
+    <wsdl:part name="CreditCardNumber" type="s:string" />
+    <wsdl:part name="ExpDate" type="s:string" />
+    <wsdl:part name="CVV" type="s:string" />
+    <wsdl:part name="CreditCardType" type="s:string" />
+    <wsdl:part name="CreditMethod" type="s:string" />
+    <wsdl:part name="CreditTypeId" type="s:string" />
+    <wsdl:part name="CustomerName" type="s:string" />
+    <wsdl:part name="PaymentsNumber" type="s:string" />
+    <wsdl:part name="PassportNumber" type="s:string" />
+    <wsdl:part name="ReferenceNumber" type="s:string" />
+    <wsdl:part name="VoucherNumber" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CreateReceiptHttpPostOut">
+    <wsdl:part name="Body" element="tns:CreateReceiptResponce" />
+  </wsdl:message>
+  <wsdl:message name="GetTipulimPriceForSupplierHttpPostIn">
+    <wsdl:part name="AgencyId" type="s:string" />
+    <wsdl:part name="SystemType" type="s:string" />
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="supplierId" type="s:string" />
+    <wsdl:part name="addId" type="s:string" />
+    <wsdl:part name="fromDate" type="s:string" />
+    <wsdl:part name="toDate" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTipulimPriceForSupplierHttpPostOut">
+    <wsdl:part name="Body" element="tns:TipulimPriceResponce" />
+  </wsdl:message>
+  <wsdl:message name="CheckSecurityHttpPostIn">
+    <wsdl:part name="AgencyId" type="s:string" />
+    <wsdl:part name="SystemType" type="s:string" />
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+    <wsdl:part name="ResourceID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckSecurityHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="PNRToDocketHttpPostIn">
+    <wsdl:part name="AgencyId" type="s:string" />
+    <wsdl:part name="SystemType" type="s:string" />
+    <wsdl:part name="BundleId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="PNRToDocketHttpPostOut">
+    <wsdl:part name="Body" element="tns:PNR2DocketResponse" />
+  </wsdl:message>
+  <wsdl:portType name="Agency2000WSSoap">
+    <wsdl:operation name="CreateReceipt">
+      <wsdl:input message="tns:CreateReceiptSoapIn" />
+      <wsdl:output message="tns:CreateReceiptSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTipulimPriceForSupplier">
+      <wsdl:input message="tns:GetTipulimPriceForSupplierSoapIn" />
+      <wsdl:output message="tns:GetTipulimPriceForSupplierSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckSecurity">
+      <wsdl:input message="tns:CheckSecuritySoapIn" />
+      <wsdl:output message="tns:CheckSecuritySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PNRToDocket">
+      <wsdl:input message="tns:PNRToDocketSoapIn" />
+      <wsdl:output message="tns:PNRToDocketSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="Agency2000WSHttpGet">
+    <wsdl:operation name="CreateReceipt">
+      <wsdl:input message="tns:CreateReceiptHttpGetIn" />
+      <wsdl:output message="tns:CreateReceiptHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTipulimPriceForSupplier">
+      <wsdl:input message="tns:GetTipulimPriceForSupplierHttpGetIn" />
+      <wsdl:output message="tns:GetTipulimPriceForSupplierHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckSecurity">
+      <wsdl:input message="tns:CheckSecurityHttpGetIn" />
+      <wsdl:output message="tns:CheckSecurityHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PNRToDocket">
+      <wsdl:input message="tns:PNRToDocketHttpGetIn" />
+      <wsdl:output message="tns:PNRToDocketHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="Agency2000WSHttpPost">
+    <wsdl:operation name="CreateReceipt">
+      <wsdl:input message="tns:CreateReceiptHttpPostIn" />
+      <wsdl:output message="tns:CreateReceiptHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTipulimPriceForSupplier">
+      <wsdl:input message="tns:GetTipulimPriceForSupplierHttpPostIn" />
+      <wsdl:output message="tns:GetTipulimPriceForSupplierHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckSecurity">
+      <wsdl:input message="tns:CheckSecurityHttpPostIn" />
+      <wsdl:output message="tns:CheckSecurityHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PNRToDocket">
+      <wsdl:input message="tns:PNRToDocketHttpPostIn" />
+      <wsdl:output message="tns:PNRToDocketHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="Agency2000WSSoap" type="tns:Agency2000WSSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateReceipt">
+      <soap:operation soapAction="http://tempuri.org/CreateReceipt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTipulimPriceForSupplier">
+      <soap:operation soapAction="http://tempuri.org/GetTipulimPriceForSupplier" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckSecurity">
+      <soap:operation soapAction="http://tempuri.org/CheckSecurity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PNRToDocket">
+      <soap:operation soapAction="http://tempuri.org/PNRToDocket" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="Agency2000WSSoap12" type="tns:Agency2000WSSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateReceipt">
+      <soap12:operation soapAction="http://tempuri.org/CreateReceipt" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTipulimPriceForSupplier">
+      <soap12:operation soapAction="http://tempuri.org/GetTipulimPriceForSupplier" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckSecurity">
+      <soap12:operation soapAction="http://tempuri.org/CheckSecurity" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PNRToDocket">
+      <soap12:operation soapAction="http://tempuri.org/PNRToDocket" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="Agency2000WSHttpGet" type="tns:Agency2000WSHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="CreateReceipt">
+      <http:operation location="/CreateReceipt" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTipulimPriceForSupplier">
+      <http:operation location="/GetTipulimPriceForSupplier" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckSecurity">
+      <http:operation location="/CheckSecurity" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PNRToDocket">
+      <http:operation location="/PNRToDocket" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="Agency2000WSHttpPost" type="tns:Agency2000WSHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="CreateReceipt">
+      <http:operation location="/CreateReceipt" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTipulimPriceForSupplier">
+      <http:operation location="/GetTipulimPriceForSupplier" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckSecurity">
+      <http:operation location="/CheckSecurity" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PNRToDocket">
+      <http:operation location="/PNRToDocket" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Agency2000WS">
+    <wsdl:port name="Agency2000WSSoap" binding="tns:Agency2000WSSoap">
+      <soap:address location="http://agency2000/Agency2000WS/Agency2000WS.asmx" />
+    </wsdl:port>
+    <wsdl:port name="Agency2000WSSoap12" binding="tns:Agency2000WSSoap12">
+      <soap12:address location="http://agency2000/Agency2000WS/Agency2000WS.asmx" />
+    </wsdl:port>
+    <wsdl:port name="Agency2000WSHttpGet" binding="tns:Agency2000WSHttpGet">
+      <http:address location="http://agency2000/Agency2000WS/Agency2000WS.asmx" />
+    </wsdl:port>
+    <wsdl:port name="Agency2000WSHttpPost" binding="tns:Agency2000WSHttpPost">
+      <http:address location="http://agency2000/Agency2000WS/Agency2000WS.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

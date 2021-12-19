@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetAccessToken">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="iCaseNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAccessTokenResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAccessTokenResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTreatmentDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="iAccessToken" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTreatmentDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTreatmentDetailsResult" type="tns:ServiceEntitledResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ServiceEntitledResponse">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:ServiceResponse">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="EntitledMainDetails" type="tns:EntitledDetails" />
+              <s:element minOccurs="0" maxOccurs="1" name="EntitledOrders" type="tns:ArrayOfEntitledOrder" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ServiceResponse">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ExtensionData" type="tns:ExtensionDataObject" />
+          <s:element minOccurs="0" maxOccurs="1" name="FailureCode" type="tns:ServiceFailureCode" />
+          <s:element minOccurs="0" maxOccurs="1" name="Status" type="tns:ServiceGeneralStatus" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ExtensionDataObject" />
+      <s:complexType name="ServiceFailureCode">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ExtensionData" type="tns:ExtensionDataObject" />
+          <s:element minOccurs="0" maxOccurs="1" name="ClientMessages" type="tns:ArrayOfString" />
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ServiceGeneralStatus">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ExtensionData" type="tns:ExtensionDataObject" />
+          <s:element minOccurs="0" maxOccurs="1" name="ClientMessages" type="tns:ArrayOfString" />
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="EntitledDetails">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ExtensionData" type="tns:ExtensionDataObject" />
+          <s:element minOccurs="0" maxOccurs="1" name="TikNumber" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfEntitledOrder">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="EntitledOrder" nillable="true" type="tns:EntitledOrder" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="EntitledOrder">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ExtensionData" type="tns:ExtensionDataObject" />
+          <s:element minOccurs="1" maxOccurs="1" name="AccompaniedNumber" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DaysNumber" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="EndDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="EntitledYear" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="FineDays" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="HotelName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="KatalogNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MedicinalHotSprings" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OrderNumberSupplier" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RequestId" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="StartDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="Status" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="string" nillable="true" type="s:string" />
+      <s:element name="ServiceEntitledResponse" nillable="true" type="tns:ServiceEntitledResponse" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetAccessTokenSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAccessToken" />
+  </wsdl:message>
+  <wsdl:message name="GetAccessTokenSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAccessTokenResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTreatmentDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTreatmentDetails" />
+  </wsdl:message>
+  <wsdl:message name="GetTreatmentDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTreatmentDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAccessTokenHttpGetIn">
+    <wsdl:part name="iCaseNumber" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAccessTokenHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTreatmentDetailsHttpGetIn">
+    <wsdl:part name="iAccessToken" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTreatmentDetailsHttpGetOut">
+    <wsdl:part name="Body" element="tns:ServiceEntitledResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAccessTokenHttpPostIn">
+    <wsdl:part name="iCaseNumber" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAccessTokenHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTreatmentDetailsHttpPostIn">
+    <wsdl:part name="iAccessToken" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTreatmentDetailsHttpPostOut">
+    <wsdl:part name="Body" element="tns:ServiceEntitledResponse" />
+  </wsdl:message>
+  <wsdl:portType name="AgencyGovConnectorSoap">
+    <wsdl:operation name="GetAccessToken">
+      <wsdl:input message="tns:GetAccessTokenSoapIn" />
+      <wsdl:output message="tns:GetAccessTokenSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTreatmentDetails">
+      <wsdl:input message="tns:GetTreatmentDetailsSoapIn" />
+      <wsdl:output message="tns:GetTreatmentDetailsSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="AgencyGovConnectorHttpGet">
+    <wsdl:operation name="GetAccessToken">
+      <wsdl:input message="tns:GetAccessTokenHttpGetIn" />
+      <wsdl:output message="tns:GetAccessTokenHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTreatmentDetails">
+      <wsdl:input message="tns:GetTreatmentDetailsHttpGetIn" />
+      <wsdl:output message="tns:GetTreatmentDetailsHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="AgencyGovConnectorHttpPost">
+    <wsdl:operation name="GetAccessToken">
+      <wsdl:input message="tns:GetAccessTokenHttpPostIn" />
+      <wsdl:output message="tns:GetAccessTokenHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTreatmentDetails">
+      <wsdl:input message="tns:GetTreatmentDetailsHttpPostIn" />
+      <wsdl:output message="tns:GetTreatmentDetailsHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="AgencyGovConnectorSoap" type="tns:AgencyGovConnectorSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAccessToken">
+      <soap:operation soapAction="http://tempuri.org/GetAccessToken" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTreatmentDetails">
+      <soap:operation soapAction="http://tempuri.org/GetTreatmentDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="AgencyGovConnectorSoap12" type="tns:AgencyGovConnectorSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAccessToken">
+      <soap12:operation soapAction="http://tempuri.org/GetAccessToken" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTreatmentDetails">
+      <soap12:operation soapAction="http://tempuri.org/GetTreatmentDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="AgencyGovConnectorHttpGet" type="tns:AgencyGovConnectorHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="GetAccessToken">
+      <http:operation location="/GetAccessToken" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTreatmentDetails">
+      <http:operation location="/GetTreatmentDetails" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="AgencyGovConnectorHttpPost" type="tns:AgencyGovConnectorHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="GetAccessToken">
+      <http:operation location="/GetAccessToken" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTreatmentDetails">
+      <http:operation location="/GetTreatmentDetails" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AgencyGovConnector">
+    <wsdl:port name="AgencyGovConnectorSoap" binding="tns:AgencyGovConnectorSoap">
+      <soap:address location="https://web27.agency2000.co.il/GovSystem/AgencyGovConnector.asmx" />
+    </wsdl:port>
+    <wsdl:port name="AgencyGovConnectorSoap12" binding="tns:AgencyGovConnectorSoap12">
+      <soap12:address location="https://web27.agency2000.co.il/GovSystem/AgencyGovConnector.asmx" />
+    </wsdl:port>
+    <wsdl:port name="AgencyGovConnectorHttpGet" binding="tns:AgencyGovConnectorHttpGet">
+      <http:address location="https://web27.agency2000.co.il/GovSystem/AgencyGovConnector.asmx" />
+    </wsdl:port>
+    <wsdl:port name="AgencyGovConnectorHttpPost" binding="tns:AgencyGovConnectorHttpPost">
+      <http:address location="https://web27.agency2000.co.il/GovSystem/AgencyGovConnector.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

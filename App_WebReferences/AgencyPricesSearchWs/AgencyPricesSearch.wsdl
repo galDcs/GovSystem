@@ -1,0 +1,437 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="getSpecificDatePriceDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="iSupplierId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="iDate" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getSpecificDatePriceDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getSpecificDatePriceDetailsResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getSpecificDatePriceDetailsXmlDocument">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="iSupplierId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="iDate" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getSpecificDatePriceDetailsXmlDocumentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getSpecificDatePriceDetailsXmlDocumentResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getHotelPriceByCombo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="iAgencyId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="iSystemType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="iClerkId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="iSupplierId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="iPriceType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="iFromDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="iToDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="iCompositionId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="iBaseId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="iRoomTypeId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getHotelPriceByComboResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getHotelPriceByComboResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getHotelPricePerArea">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="iAgencyId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="iSystemType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="iClerkId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="iAreaId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="iSupplierId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="iPriceType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="iLanguage" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="iFromDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="iToDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="iCompositionId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="iBaseId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getHotelPricePerAreaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getHotelPricePerAreaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getHotelPricePerAreaByMultipleBaseIds">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="iAgencyId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="iSystemType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="iClerkId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="iAreaId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="iSupplierId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="iPriceType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="iLanguage" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="iFromDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="iToDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="iCompositionId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="iBaseIds" type="tns:ArrayOfInt" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfInt">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="int" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getHotelPricePerAreaByMultipleBaseIdsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getHotelPricePerAreaByMultipleBaseIdsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getHotelPricePerAreaWithoutSaleCycle">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="iAgencyId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="iSystemType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="iClerkId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="iAreaId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="iSupplierId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="iPriceType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="iLanguage" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="iFromDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="iToDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="iCompositionId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="iBaseId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getHotelPricePerAreaWithoutSaleCycleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getHotelPricePerAreaWithoutSaleCycleResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getHotelPricePerAreaWithAllocations">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="iAgencyId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="iSystemType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="iClerkId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="iSupplierId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="iPriceType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="iFromDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="iToDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="iCompositionId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="iBaseId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="iRoomsAmount" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="iIsSite" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getHotelPricePerAreaWithAllocationsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getHotelPricePerAreaWithAllocationsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getHotelPriceAgencyXml">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="iAgencyId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="iSystemType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="iClerkId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="iAreaId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="iSupplierId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="iPriceType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="iLanguage" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="iFromDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="iToDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="iCompositionId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="iBaseId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getHotelPriceAgencyXmlResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getHotelPriceAgencyXmlResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="getSpecificDatePriceDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:getSpecificDatePriceDetails" />
+  </wsdl:message>
+  <wsdl:message name="getSpecificDatePriceDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:getSpecificDatePriceDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="getSpecificDatePriceDetailsXmlDocumentSoapIn">
+    <wsdl:part name="parameters" element="tns:getSpecificDatePriceDetailsXmlDocument" />
+  </wsdl:message>
+  <wsdl:message name="getSpecificDatePriceDetailsXmlDocumentSoapOut">
+    <wsdl:part name="parameters" element="tns:getSpecificDatePriceDetailsXmlDocumentResponse" />
+  </wsdl:message>
+  <wsdl:message name="getHotelPriceByComboSoapIn">
+    <wsdl:part name="parameters" element="tns:getHotelPriceByCombo" />
+  </wsdl:message>
+  <wsdl:message name="getHotelPriceByComboSoapOut">
+    <wsdl:part name="parameters" element="tns:getHotelPriceByComboResponse" />
+  </wsdl:message>
+  <wsdl:message name="getHotelPricePerAreaSoapIn">
+    <wsdl:part name="parameters" element="tns:getHotelPricePerArea" />
+  </wsdl:message>
+  <wsdl:message name="getHotelPricePerAreaSoapOut">
+    <wsdl:part name="parameters" element="tns:getHotelPricePerAreaResponse" />
+  </wsdl:message>
+  <wsdl:message name="getHotelPricePerAreaByMultipleBaseIdsSoapIn">
+    <wsdl:part name="parameters" element="tns:getHotelPricePerAreaByMultipleBaseIds" />
+  </wsdl:message>
+  <wsdl:message name="getHotelPricePerAreaByMultipleBaseIdsSoapOut">
+    <wsdl:part name="parameters" element="tns:getHotelPricePerAreaByMultipleBaseIdsResponse" />
+  </wsdl:message>
+  <wsdl:message name="getHotelPricePerAreaWithoutSaleCycleSoapIn">
+    <wsdl:part name="parameters" element="tns:getHotelPricePerAreaWithoutSaleCycle" />
+  </wsdl:message>
+  <wsdl:message name="getHotelPricePerAreaWithoutSaleCycleSoapOut">
+    <wsdl:part name="parameters" element="tns:getHotelPricePerAreaWithoutSaleCycleResponse" />
+  </wsdl:message>
+  <wsdl:message name="getHotelPricePerAreaWithAllocationsSoapIn">
+    <wsdl:part name="parameters" element="tns:getHotelPricePerAreaWithAllocations" />
+  </wsdl:message>
+  <wsdl:message name="getHotelPricePerAreaWithAllocationsSoapOut">
+    <wsdl:part name="parameters" element="tns:getHotelPricePerAreaWithAllocationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="getHotelPriceAgencyXmlSoapIn">
+    <wsdl:part name="parameters" element="tns:getHotelPriceAgencyXml" />
+  </wsdl:message>
+  <wsdl:message name="getHotelPriceAgencyXmlSoapOut">
+    <wsdl:part name="parameters" element="tns:getHotelPriceAgencyXmlResponse" />
+  </wsdl:message>
+  <wsdl:portType name="AgencyPricesSearchSoap">
+    <wsdl:operation name="getSpecificDatePriceDetails">
+      <wsdl:input message="tns:getSpecificDatePriceDetailsSoapIn" />
+      <wsdl:output message="tns:getSpecificDatePriceDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getSpecificDatePriceDetailsXmlDocument">
+      <wsdl:input message="tns:getSpecificDatePriceDetailsXmlDocumentSoapIn" />
+      <wsdl:output message="tns:getSpecificDatePriceDetailsXmlDocumentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getHotelPriceByCombo">
+      <wsdl:input message="tns:getHotelPriceByComboSoapIn" />
+      <wsdl:output message="tns:getHotelPriceByComboSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getHotelPricePerArea">
+      <wsdl:input message="tns:getHotelPricePerAreaSoapIn" />
+      <wsdl:output message="tns:getHotelPricePerAreaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getHotelPricePerAreaByMultipleBaseIds">
+      <wsdl:input message="tns:getHotelPricePerAreaByMultipleBaseIdsSoapIn" />
+      <wsdl:output message="tns:getHotelPricePerAreaByMultipleBaseIdsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getHotelPricePerAreaWithoutSaleCycle">
+      <wsdl:input message="tns:getHotelPricePerAreaWithoutSaleCycleSoapIn" />
+      <wsdl:output message="tns:getHotelPricePerAreaWithoutSaleCycleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getHotelPricePerAreaWithAllocations">
+      <wsdl:input message="tns:getHotelPricePerAreaWithAllocationsSoapIn" />
+      <wsdl:output message="tns:getHotelPricePerAreaWithAllocationsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getHotelPriceAgencyXml">
+      <wsdl:input message="tns:getHotelPriceAgencyXmlSoapIn" />
+      <wsdl:output message="tns:getHotelPriceAgencyXmlSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="AgencyPricesSearchSoap" type="tns:AgencyPricesSearchSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getSpecificDatePriceDetails">
+      <soap:operation soapAction="http://tempuri.org/getSpecificDatePriceDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSpecificDatePriceDetailsXmlDocument">
+      <soap:operation soapAction="http://tempuri.org/getSpecificDatePriceDetailsXmlDocument" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getHotelPriceByCombo">
+      <soap:operation soapAction="http://tempuri.org/getHotelPriceByCombo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getHotelPricePerArea">
+      <soap:operation soapAction="http://tempuri.org/getHotelPricePerArea" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getHotelPricePerAreaByMultipleBaseIds">
+      <soap:operation soapAction="http://tempuri.org/getHotelPricePerAreaByMultipleBaseIds" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getHotelPricePerAreaWithoutSaleCycle">
+      <soap:operation soapAction="http://tempuri.org/getHotelPricePerAreaWithoutSaleCycle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getHotelPricePerAreaWithAllocations">
+      <soap:operation soapAction="http://tempuri.org/getHotelPricePerAreaWithAllocations" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getHotelPriceAgencyXml">
+      <soap:operation soapAction="http://tempuri.org/getHotelPriceAgencyXml" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="AgencyPricesSearchSoap12" type="tns:AgencyPricesSearchSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getSpecificDatePriceDetails">
+      <soap12:operation soapAction="http://tempuri.org/getSpecificDatePriceDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSpecificDatePriceDetailsXmlDocument">
+      <soap12:operation soapAction="http://tempuri.org/getSpecificDatePriceDetailsXmlDocument" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getHotelPriceByCombo">
+      <soap12:operation soapAction="http://tempuri.org/getHotelPriceByCombo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getHotelPricePerArea">
+      <soap12:operation soapAction="http://tempuri.org/getHotelPricePerArea" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getHotelPricePerAreaByMultipleBaseIds">
+      <soap12:operation soapAction="http://tempuri.org/getHotelPricePerAreaByMultipleBaseIds" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getHotelPricePerAreaWithoutSaleCycle">
+      <soap12:operation soapAction="http://tempuri.org/getHotelPricePerAreaWithoutSaleCycle" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getHotelPricePerAreaWithAllocations">
+      <soap12:operation soapAction="http://tempuri.org/getHotelPricePerAreaWithAllocations" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getHotelPriceAgencyXml">
+      <soap12:operation soapAction="http://tempuri.org/getHotelPriceAgencyXml" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AgencyPricesSearch">
+    <wsdl:port name="AgencyPricesSearchSoap" binding="tns:AgencyPricesSearchSoap">
+      <soap:address location="http://localhost:50489/AgencyPricesSearch.asmx" />
+    </wsdl:port>
+    <wsdl:port name="AgencyPricesSearchSoap12" binding="tns:AgencyPricesSearchSoap12">
+      <soap12:address location="http://localhost:50489/AgencyPricesSearch.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
