@@ -1,0 +1,204 @@
+﻿body 
+{
+	/*width:750px;*/
+	width:100%;
+}
+
+.MainTable
+{
+    BACKGROUND-IMAGE: none;
+    OVERFLOW: auto;
+    WIDTH: 100%;
+    BACKGROUND-REPEAT: repeat;
+    
+    /*BACKGROUND-COLOR: transparent;*/
+    
+}
+.MainTable TH
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 13px;
+    BACKGROUND-IMAGE: none;
+    COLOR: black;
+   /* BACKGROUND-REPEAT: repeat;*/
+    
+    BACKGROUND-COLOR: #cccccc;
+    PADDING: 1px 4px;
+   
+}
+.MainTable TD
+{
+    FONT-SIZE: 13px;
+    BACKGROUND-IMAGE: none;
+    COLOR: #123067;
+    BACKGROUND-REPEAT: repeat;
+    
+    BACKGROUND-COLOR: #eeeeee;
+}
+ TH.borderup 
+{   BORDER-TOP: Red 3px solid;
+}
+ TH.borderright  
+{   BORDER-RIGHT: Red 3px solid;
+   
+}
+TH.borderup borderright
+{BORDER-TOP: Red 3px solid;
+ BORDER-RIGHT: Red 3px solid;
+}
+ TH.borderleft  
+{   BORDER-LEFT: Red 3px solid;
+}
+ TD.borderright 
+{   BORDER-RIGHT: Red 3px solid;
+   
+}
+ TD.borderleft 
+{   BORDER-LEFT: Red 3px solid;
+}
+ TD.borderbottom 
+{   border-bottom: Red 3px solid;
+}
+.MainTableBorderLess
+{
+    BORDER-RIGHT: black 0px solid;
+    BORDER-TOP: black 0px solid;
+    BACKGROUND: #7d98b7;
+    BORDER-LEFT: black 0px solid;
+    BORDER-BOTTOM: black 0px solid;
+    FONT-FAMILY: inherit;
+    BORDER-COLLAPSE: collapse
+}
+.MainTableBorderLess TH
+{
+    BORDER-RIGHT: black 0px solid;
+    BORDER-TOP: black 0px solid;
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 13px;
+    BACKGROUND: #12306a;
+    BORDER-LEFT: black 0px solid;
+    COLOR: #d5deef;
+    BORDER-BOTTOM: black 0px solid;
+    FONT-FAMILY: inherit;
+}
+.MainTableBorderLess TD
+{
+    BORDER-RIGHT: black 0px solid;
+    BORDER-TOP: black 0px solid;
+    FONT-SIZE: 13px;
+    BACKGROUND: #eee;
+    BORDER-LEFT: black 0px solid;
+    COLOR: #12306a;
+    BORDER-BOTTOM: black 0px solid;
+    FONT-FAMILY: inherit;
+}
+
+.MainTableWithBorder
+{
+    BORDER-RIGHT: black 0px solid;
+    BORDER-TOP: black 0px solid;
+    BACKGROUND: #7d98b7;
+    BORDER-LEFT: black 0px solid;
+    BORDER-BOTTOM: black 0px solid;
+    FONT-FAMILY: inherit;
+    BORDER-COLLAPSE: collapse;
+    border: solid 1px gray;
+}
+.MainTableWithBorder TH
+{
+    BORDER-RIGHT: black 0px solid;
+    BORDER-TOP: black 0px solid;
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 13px;
+    BACKGROUND: #12306a;
+    BORDER-LEFT: black 0px solid;
+    COLOR: #d5deef;
+    BORDER-BOTTOM: black 0px solid;
+    FONT-FAMILY: inherit;
+    border: solid 1px gray;
+}
+.MainTableWithBorder TD
+{
+    BORDER-RIGHT: black 0px solid;
+    BORDER-TOP: black 0px solid;
+    FONT-SIZE: 13px;
+    BACKGROUND: #eee;
+    BORDER-LEFT: black 0px solid;
+    COLOR: #12306a;
+    BORDER-BOTTOM: black 0px solid;
+    FONT-FAMILY: inherit;
+    border: solid 1px gray;
+}
+
+.MainTableWithBorder2
+{
+    BORDER-RIGHT: black 0px solid;
+    BORDER-TOP: black 0px solid;
+    BORDER-LEFT: black 0px solid;
+    BORDER-BOTTOM: black 0px solid;
+    FONT-FAMILY: inherit;
+    BORDER-COLLAPSE: collapse;
+    border: solid 1px gray;
+    BACKGROUND-IMAGE: none;
+    OVERFLOW: auto;
+    WIDTH: 100%;
+    BACKGROUND-REPEAT: repeat;
+    BACKGROUND-COLOR: transparent;
+}
+.MainTableWithBorder2 TH
+{
+    BORDER-RIGHT: black 0px solid;
+    BORDER-TOP: black 0px solid;
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 13px;
+    BORDER-LEFT: black 0px solid;
+    BORDER-BOTTOM: black 0px solid;
+    FONT-FAMILY: inherit;
+    border: solid 1px gray;
+    BACKGROUND-IMAGE: none;
+    COLOR: black;
+    BACKGROUND-REPEAT: repeat;
+    BACKGROUND-COLOR: #cccccc;
+    PADDING: 1px 4spx;
+}
+.MainTableWithBorder2 TD
+{
+    BORDER-RIGHT: black 0px solid;
+    BORDER-TOP: black 0px solid;
+    FONT-SIZE: 13px;
+    BORDER-LEFT: black 0px solid;
+    BORDER-BOTTOM: black 0px solid;
+    FONT-FAMILY: inherit;
+    border: solid 1px gray;
+    BACKGROUND-IMAGE: none;
+    COLOR: #123067;
+    BACKGROUND-REPEAT: repeat;
+    BACKGROUND-COLOR: #eeeeee;
+}
+
+
+input[disabled]
+{
+	background-color:Silver;
+}
+
+.grid_date_style
+{
+	
+}
+
+.redBackground TD
+{
+    background-color:Red;
+    color: White;
+}
+.greenBackground TD
+{
+    background-color:Green;
+    color: White;
+}
+.yellowBackground TD
+{
+    background-color:Yellow;
+    color: Black;
+}
